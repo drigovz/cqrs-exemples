@@ -1,5 +1,7 @@
 # Set default behavior to automatically normalize line endings. > .gitattributes
 * text=auto
+
+.env
  
 *.doc  diff=astextplain
 *.DOC	 diff=astextplain
