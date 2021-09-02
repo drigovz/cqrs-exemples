@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CustomersCqrs.Infra.Data": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
