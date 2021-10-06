@@ -1,4 +1,5 @@
-appsettings.Local
+appsettings.Local.json
+.env
 
 # User-specific files
 *.rsuser
