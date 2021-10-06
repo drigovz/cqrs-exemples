@@ -1,10 +1,10 @@
-﻿using Ecommerce.Domain.Entities;
+﻿using Ecommerce.Application.Commands.Clients;
 using Ecommerce.Domain.Validators;
 using FluentValidation;
 
-namespace Ecommerce.Domain.Validations
+namespace Ecommerce.Application.Validators
 {
-    public class ClientValidator : AbstractValidator<Client>
+    public class ClientValidator : AbstractValidator<ClientCreateCommand>
     {
         public ClientValidator()
         {
