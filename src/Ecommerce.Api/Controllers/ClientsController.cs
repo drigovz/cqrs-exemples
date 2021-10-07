@@ -1,6 +1,8 @@
-﻿using Ecommerce.Application.Commands.Clients;
+﻿using Ecommerce.Application.Clients.Commands;
+using Ecommerce.Application.Clients.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Threading.Tasks;
 
 namespace Ecommerce.Api.Controllers
@@ -20,5 +22,21 @@ namespace Ecommerce.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ClientCreateCommand command)
             => Ok(await _mediator.Send(command));
+
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> Get([BindRequired] int id)
+            => Ok(await _mediator.Send(new GetClientByIdQuery { Id = id }));
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+            => Ok(await _mediator.Send(new GetClientsQuery()));
+
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> Update([BindRequired] int id, ClientUpdateCommand command)
+            => Ok(await _mediator.Send(command));
+
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete([BindRequired] int id)
+            => Ok(await _mediator.Send(new ClientRemoveCommand { Id = id }));
     }
 }

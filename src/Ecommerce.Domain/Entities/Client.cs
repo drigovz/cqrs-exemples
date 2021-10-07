@@ -25,6 +25,12 @@ namespace Ecommerce.Domain.Entities
         }
 
         public void Update(string firstName, string lastName, string email)
-        { }
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+
+            EntityValidation(this, new ClientValidator());
+        }
     }
 }

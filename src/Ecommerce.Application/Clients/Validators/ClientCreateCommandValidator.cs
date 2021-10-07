@@ -1,12 +1,12 @@
-﻿using Ecommerce.Application.Commands.Clients;
+﻿using Ecommerce.Application.Clients.Commands;
 using Ecommerce.Domain.Validators;
 using FluentValidation;
 
-namespace Ecommerce.Application.Validators
+namespace Ecommerce.Application.Clients.Validators
 {
-    public class ClientValidator : AbstractValidator<ClientCreateCommand>
+    public class ClientCreateCommandValidator : AbstractValidator<ClientCreateCommand>
     {
-        public ClientValidator()
+        public ClientCreateCommandValidator()
         {
             RuleFor(x => x.FirstName).FirstName();
             RuleFor(x => x.LastName).LastName();

@@ -1,5 +1,5 @@
 ﻿using Ecommerce.Application.Clients.Commands;
-using Ecommerce.Application.Commands.Clients;
+using Ecommerce.Application.Core.Commands;
 using Ecommerce.Application.Notifications;
 using Ecommerce.Domain.Entities;
 using Ecommerce.Domain.Interfaces;
@@ -7,7 +7,7 @@ using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Ecommerce.Application.Handlers.Commands
+namespace Ecommerce.Application.Clients.Handlers.Commands
 {
     public class ClientCreateCommandHandler : IRequestHandler<ClientCreateCommand, ResponseCommand>
     {

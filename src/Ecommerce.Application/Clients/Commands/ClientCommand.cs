@@ -1,7 +1,7 @@
-﻿using Ecommerce.Application.Clients.Commands;
+﻿using Ecommerce.Application.Core.Commands;
 using MediatR;
 
-namespace Ecommerce.Application.Commands.Clients
+namespace Ecommerce.Application.Clients.Commands
 {
     public abstract class ClientCommand : IRequest<ResponseCommand>
     {

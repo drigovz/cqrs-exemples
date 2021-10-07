@@ -15,20 +15,24 @@ namespace Ecommerce.Application.Notifications
             _notifications = new List<Notification>();
         }
 
-        public void AddNotification(string key, string message)
+        public List<Notification> AddNotification(string key, string message)
         {
             _notifications.Add(new Notification(key, message));
+            return _notifications;
         }
 
-        public void AddNotifications(IReadOnlyCollection<Notification> notifications)
+        public List<Notification> AddNotifications(IReadOnlyCollection<Notification> notifications)
         {
             _notifications.AddRange(notifications);
+            return _notifications;
         }
 
-        public void AddNotifications(ValidationResult validationResult)
+        public List<Notification> AddNotifications(ValidationResult validationResult)
         {
             foreach (var error in validationResult.Errors)
                 AddNotification(error.ErrorCode, error.ErrorMessage);
+
+            return _notifications;
         }
     }
 }

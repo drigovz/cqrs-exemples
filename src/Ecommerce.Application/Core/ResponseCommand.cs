@@ -1,7 +1,7 @@
 ﻿using Ecommerce.Application.Notifications;
 using System.Collections.Generic;
 
-namespace Ecommerce.Application.Clients.Commands
+namespace Ecommerce.Application.Core.Commands
 {
     public class ResponseCommand
     {
